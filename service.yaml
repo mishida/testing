@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: test
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+      - image: gcr.io/ethereal-mind-304004/github.com/mishida/testing
+        env:
+        - name: TARGET
+          value: "Python Sample v1"
