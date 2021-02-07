@@ -1,9 +1,11 @@
 import os
 from flask import Flask
+
 app = Flask(__name__)
-@app.route(“/”)
+
+@app.route("/")
 def hello_world():
-    name = os.environ.get(“NAME”, “山口“)
-    return “Hello {}!“.format(name)
-if __name__ == “__main__“:
-    app.run(debug=True, host=“0.0.0.0”, port=int(os.environ.get(“PORT”, 8080)))\
+    name = os.environ.get("NAME", "山口")
+    return "Hello {}!".format(name)
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
